@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="personService" class="home.hs.service.PersonService">
+        <property name="name" value="韩帅"/>
+    </bean>
+
+    <bean id="chinese" class="home.hs.bean.impl.Chinese">
+        <property name="axe" ref="laserAxe"/>
+    </bean>
+
+    <bean id="stoneAxe" class="home.hs.bean.impl.StoneAxe">
+    </bean>
+
+    <bean id="steelAxe" class="home.hs.bean.impl.SteelAxe">
+    </bean>
+
+    <bean id="laserAxe" class="home.hs.bean.impl.LaserAxe">
+    </bean>
+
+    <bean id="superMan" class="home.hs.bean.impl.SuperMan">
+        <constructor-arg ref="steelAxe"/>
+    </bean>
+
+    <bean class="home.hs.listener.EmailNotifier"/>
+</beans>
